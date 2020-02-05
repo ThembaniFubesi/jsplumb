@@ -1175,6 +1175,8 @@
         },
     //http://www.quirksmode.org/blog/archives/2005/10/_and_the_winner_1.html
         _bind = function (obj, type, fn, originalFn) {
+            // event listeners commented out due to peformance issues
+            /*
             _store(obj, type, fn);
             originalFn.__tauid = fn.__tauid;
             if (obj.addEventListener)
@@ -1187,7 +1189,7 @@
                     obj["e" + key] && obj["e" + key](window.event);
                 };
                 obj.attachEvent("on" + type, obj[key]);
-            }
+            }*/
         },
         _unbind = function (obj, type, fn) {
             if (fn == null) return;
